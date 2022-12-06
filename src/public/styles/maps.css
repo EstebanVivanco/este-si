@@ -1,0 +1,41 @@
+#map {
+    height: 400px;
+    width: max-width;
+    background-color: brown;
+}
+
+#Coordlat {
+    display: none;
+}
+
+#Coordlng {
+    display: none;
+}
+
+#imgcard {
+    height: 200px;
+}
+
+#datecut {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+#cardwide {
+    width: 100%;
+}
+
+#lat {
+    display: none;
+}
+
+#lng {
+    display: none;
+}
+
+#cardfull {
+    width: 40%;
+    text-align: center;
+}

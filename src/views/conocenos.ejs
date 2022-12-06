@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../sass/custom.css">
+    <title></title>
+</head>
+<body> 
+
+    
+    <!--Inicio del navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index">INICIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                
+                <ul class="navbar-nav px-5" >
+                    <li class="nav-item mx-2">
+                        <a class="nav-link"  href="/index">EVENTOS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/conocenos">ACERCA DE</a>
+                    </li>
+                    <% if(user) {%>
+                    <li class="nav-item mx-2">
+                    <a class="nav-link" href="/events">PUBLICAR EVENTO</a>
+                    </li>
+                    
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="/myevents">Mis Solicitudes</a>
+                        </li>
+                    
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/logout">Cerrar Sesion</a>
+                        <li>        
+                    <% } %>
+    
+        
+    </ul>
+        </div>
+    </div>
+    <div>
+        <a class="navbar-brand" href="/user">
+            <img src="../styles/user.png" style="width: 40px; height: 40px;" alt="">
+        </a>
+    </div>
+    </nav>
+    <!--Fin del navbar-->
+    
+        <div class="container pt-5 ">
+            <div class="row ">
+                <div class="col-md-12 col-lg-6 ">
+                   
+                    <h3 class="text-center">¿Quiénes somos?</h3>
+                    <br>
+                    <br>
+                    <p class="" style="font-size:17px ;">Somos un pequeño grupo de desarrolladores aburridos por los panoramas en nuestra ciudad, cansados enterarnos siempre de lo mismo y perdernos los eventos que tanto nos gustan por no haber suficiente información, creamos esta página web para solucionar este problema. <br><br>
+                        Creamos nuestra página donde hasta una persona cualquiera podrá publicar su evento, para así poder llegar a más personas y que su evento no quede en el olvido, desde fiestas masivas hasta eventos de caridad. No dudes en contactarnos a través de nuestro correo electrónico o nuestras redes sociales.
+                    </p>
+                    <h5 class="">Y tú, ¿Qué esperas para encontrar tu próximo panorama?</h5>
+                 
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    
+                        <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid w-100" alt="Imagen no encontrada">
+                        <h6 class="mt-2 card-text">
+                            Recuerda que puedes publicar tu propio evento, Registrate y Crealo!!
+                        </h6>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+</html>

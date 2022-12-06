@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="../styles/maps.css" type="text/css">
+
+</head>
+<body>
+
+    
+
+    <!--Inicio del navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index">INICIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                
+                <ul class="navbar-nav px-5" >
+                    <li class="nav-item mx-2">
+                        <a class="nav-link"  href="/index">EVENTOS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/conocenos">ACERCA DE</a>
+                    </li>
+                    <% if(user) {%>
+                    <li class="nav-item mx-2">
+                    <a class="nav-link" href="/events">PUBLICAR EVENTO</a>
+                    </li>
+                    
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="/myevents">Mis Solicitudes</a>
+                        </li>
+                    
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/logout">Cerrar Sesion</a>
+                        <li>        
+                            <% } %>
+                            
+    </ul>
+        </div>
+    </div>
+    <div>
+        <a class="navbar-brand" href="/user">
+            <img src="../styles/user.png" style="width: 40px; height: 40px;" alt="">
+        </a>
+    </div>
+    </nav>
+    <!--Fin del navbar-->
+    <!--Imagen -->
+    <div class="banner"><img src="../styles/banner.jpg" class="img-fluid" alt="No se econtro la imagen"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <!--Columna izquierda-->
+            <div class="container-fluid col-1 col-lg-2" >
+                <h3 class="pt-5">CATEGORIAS</h3>
+                <hr>
+                <!--INICIO DE LOS BOTONES DE CATEGORIA-->
+                <div class="d-grid gap-2 col-12 mx-auto">
+
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/1">CONCIERTOS</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/2">EXPOS</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/3">DEPORTIVOS</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/4">CULTURALES</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/5">FIESTAS MASIVAS</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/7">FERIAS LIBRES</a>
+                        <a class="btn btn-primary rounded-0 text-white" type="button" href="/index/9">GASTRONÓMICOS</a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                <!--Columna central-->
+                <main class="col-12 col-lg-8">
+                    <h3 class="pt-5">PANORAMAS</h3>
+
+                    <form action="/indec">
+                        <div class="container">
+                            <div class="row mb-3">
+                                <div class="col-md-11">
+                                    <input class="form-control" type="text" placeholder="Buscar Evento..." id="names" name="names">
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-primary rounded-0 text-white" type="submit">BUSCAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="container">
+                        <div class="row g-3">
+                            
+                
+
+            <% results.forEach((event) => { %>
+                
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <img src="../uploads/<%= event.Image %>" class="card-img-top" id="imgcard" alt="A Street in Europe">
+                                <div class="card-body">
+                                    <input hidden id="idevent" name="idevent" value="<%=event.IdEvent%>">
+                                    <h5 class="card-title"><%= event.NameV %></h5>
+                                    <p class="card-text"><%= event.LocationName %></p>
+                                    <h5 class="card-title"><%= event.Name %></h5>
+                                    <p class="card-text" id="datecut">Fecha: <%= (event.Date) %></p>
+                                    <% if(event.Price == 0 ) {%>
+                                        <p class="card-text">Entrada Liberada</p>
+                                    <%}%>
+
+                                    <% if(event.Price != 0 ) {%>
+                                        <p class="card-text">Valor entrada : $<%= event.Price %></p>
+                                    <%}%>
+                                    <% if(event.Date < Date.now() ) {%>
+                                        <a href="/fullevent/<%=event.IdEvent%>" style="width: 100%;" class="btn btn-danger  rounded-0 btn-block text-white">Evento Finalizado</a>
+                                    <%}%>
+                                    <% if(event.Date > Date.now() ) {%>
+                                        <a href="/fullevent/<%=event.IdEvent%>" style="width: 100%;" class="btn btn-primary  rounded-0 btn-block text-white">Ver Evento</a>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+              <% }) %>
+
+                    </div>
+                </div>
+    
+            </main>
+            <!--Columna derecha PUBLICIDAD-->
+            <div class="col-12 col-lg-2 mt-3">
+            </div>
+    
+        </div>
+    </div>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
