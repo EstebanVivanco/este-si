@@ -7,5 +7,9 @@ Primero, una vez descargado el proyecto, debemos descargar en instalar node y lu
  
 # Instalación de dependencias
  - npm install bootstrap ejs express express-session leaflet multer mysql nodemon uuid
+
+
 Luego de haber ejecutado ese comando en la raiz de nuestro proyecto, ejecutamos el siguiente para levantar el servidor
- - npm run buenas
+
+
+- npm run buenas
