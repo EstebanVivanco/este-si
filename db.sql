@@ -63,4 +63,4 @@ Create table revision (
 insert into user VALUES (null, 'Salomod', 'Mod', 'salomod@encuentralo.cl','admin',2001-11-28,209205599,9123456789,1)
 insert into event_type values (null, 'Concierto'), (null, 'Expo'), (null,'Deportivo'), (null,'Culturales'), (null,'Fiestas Masivas'), (null,'Ferias Libres'),(null,'Gastrónomicos')
 insert into user_level values (null, 'admin'),(null, 'normal'),(null, 'inhabilitado')
-insert into event_state values (null,'pendiente'),(null,'aceptado'),,(null,'rechazado'),(null,'Pendiente de pago'),(null,'Pendiente de cambios')
+insert into event_state values (null,'pendiente'),(null,'aceptado'),(null,'rechazado'),(null,'Pendiente de pago'),(null,'Pendiente de cambios')

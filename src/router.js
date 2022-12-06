@@ -123,7 +123,7 @@ router.get('/payment/:id', (req,res)=>{
 
 
 router.get('/index', (req,res)=>{
-    res.render('index', { user: req.session.user});
+    res.render('index', ({ user: req.session.user}));
 })
    
 router.get('/user', (req,res)=>{
