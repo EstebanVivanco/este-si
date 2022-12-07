@@ -13,3 +13,8 @@ Luego de haber ejecutado ese comando en la raiz de nuestro proyecto, ejecutamos 
 
 
 - npm run buenas
+
+
+#Cargar base de datos
+
+Ingreso manual del archivo db.sql nomas, lo que toca ah listo
